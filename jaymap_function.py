@@ -3,6 +3,7 @@ import re
 import os
 from datetime import date
 from datetime import timedelta
+import json
 
 today = date.today()
 report_date = today - timedelta(days=6)
@@ -17,4 +18,8 @@ url2 = f"https://content.guardianapis.com/search?section=food&from-date={report_
 response = requests.request("GET", url2, data = payload)
 responsejson = response.json()
 
-print(responsejson)
+#print(json.dumps(responsejson, indent=4, sort_keys=True))
+for result in responsejson['response']['results']:
+    print(result['apiUrl'])
+    article = requests.request("GET", result['apiUrl'], data = payload)
+    print(article)
