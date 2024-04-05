@@ -1,4 +1,4 @@
-# JayMap - a project which overlays Jay Rayner's restaurant reviews onto google maps
+# JayMap - a project which overlays Guardian restaurant reviews onto google maps
 
 ## What is this?
 I love [Jay Rayner's restaurant reviews in the guardian](https://www.theguardian.com/food/series/jay-rayner-on-restaurants). when travelling, i would always try to find a restaurant he had reviewed close to where I was staying (fairly obviously, one which got an ok review). You can absolutely google for jay rayner and the city it is you are in, but then you have to know where in the city the restaurant is, or do a follow up google (or be prepared to get a cab). What i wanted was an overlay on google maps which could show me relative to me where the restaurants were, so i could pick one which i could walk to. 
@@ -13,3 +13,7 @@ There is, yes. This is most likely because not all reviews have a postcode in, a
 
 ## why isnt this all the guardian food critics?
 It could be made to be. I will do different overlays for Grace and any other ones. 
+
+## todo
+firebase app
+make cloud function to collect the stuff and stick it in a database
