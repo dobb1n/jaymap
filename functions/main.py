@@ -4,10 +4,17 @@
 
 from firebase_functions import https_fn
 from firebase_admin import initialize_app
+from datetime import date
+from datetime import timedelta
 
-# initialize_app()
-#
-#
-# @https_fn.on_request()
-# def on_request_example(req: https_fn.Request) -> https_fn.Response:
-#     return https_fn.Response("Hello world!")
+initialize_app()
+
+@https_fn.on_request()
+def on_request_example(req: https_fn.Request) -> https_fn.Response:
+    return https_fn.Response("Hello world!")
+
+@https_fn.collect_data()
+def collect_data(req: https_fn.Request) -> https_fn.Response:
+    today = date.today()
+    report_date = today - timedelta(days=6)
+    return https_fn.Response("Hello world!")
