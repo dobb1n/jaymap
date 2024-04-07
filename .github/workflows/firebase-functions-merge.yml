@@ -1,4 +1,4 @@
-name: Deploy the main branch
+name: Deploy the firebase functions to the main branch
 on:
   push:
     branches:
@@ -12,6 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: jsryudev/deploy-firebase-functions@v0.0.2
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        FIREBASE_PROJECT: firebase-project-id
+      with:
+        repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JAYMAP_419408 }}'
+        channelId: live
+        projectId: jaymap-419408
